@@ -1,0 +1,75 @@
+# docker-compose.yml
+version: '2'
+services:
+web:
+build: .
+# build from Dockerfile
+context: ./Path
+dockerfile: Dockerfile
+ports:
+- "5000:5000"
+volumes:
+- .:/code
+redis:
+image: redis
+
+# Reference
+# ● Building
+
+web:
+# build using the Dockerfile
+build: .
+# build using the custom Dockerfile
+build:
+context: ./dir
+dockerfile: Dockerfile.dev
+# build from image
+image: ubuntu
+image: ubuntu:14.04
+image: tutum/influxdb
+image: example-registry:4000/postgresql
+image: a4bc65fd
+
+# Ports
+
+ports:
+- "3000"
+- "8000:80" # guest:host
+# expose ports to linked services (not to host)
+expose: ["3000"]
+
+# Commands
+
+# commands to execute
+command: bundle exec thin -p 3000
+command: [bundle, exec, thin, -p, 3000]
+# overriding the entrypoint
+entrypoint: /app/start.sh
+entrypoint: [php, -d, vendor/bin/phpunit]
+● Environment variables
+# environment variables
+environment:
+RACK_ENV: development
+environment:
+- RACK_ENV=development
+# environment vars from the specified file
+env_file: .env
+env_file: [.env, .development.env]
+
+# Dependencies #
+
+# makes the `db` service available as the hostname `database`
+# (implies depends_on)
+links:
+- db:database
+- redis
+# make sure `db` is alive before starting
+depends_on:
+- db
+● Other options
+# make this service extend another
+extends:
+file: common.yml # optional
+service: web app
+volumes:
+- /var/lib/mysql
