@@ -30,4 +30,15 @@ connect a Docker client to a remote Docker daemon.
 
 ![image](https://github.com/AshokTippaluri/Docker_project/assets/96752472/68d70b6d-a514-4e45-9a0a-d735d7fd2421)
 
+# Docker Image/Container and DockerFile
+• A Docker image is a read-only, inert template with instructions for deploying containers. In Docker, everything revolves around images.
+
+• An image consists of a collection of files (or layers) that pack together all the necessities—such as dependencies, source code, and libraries—needed to set up a completely functional container environment.
+
+• Images are stored on a Docker registry, such as the Docker Hub, or on a local registry. A Docker container is a virtualized runtime environment that provides isolation capabilities for separating the execution of applications from the underpinning system. It’s an instance of a Docker image.
+
+![image](https://github.com/AshokTippaluri/Docker_project/assets/96752472/a3e924bd-16a9-454c-a048-d71942c555d0)
+
+
+
 
