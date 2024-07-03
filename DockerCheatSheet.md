@@ -4,7 +4,8 @@ Repository refers to the hosted collection of the images creating the file syste
 
 Registry refers to the host containing the repositories and providing an HTTP API that helps manage the repositories.
 
-# Docker has its central registry with thousands of repositories. But before you use the images from this registry, make sure you verify them to avoid security issues.
+> Docker has its central registry with thousands of repositories. But before you use the images from this registry, make sure you verify them to avoid security issues.
+
 ● docker login: To log in to a registry.
 
 ● docker logout: To log out from a registry.
