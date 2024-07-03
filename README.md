@@ -4,7 +4,11 @@
 
 [Example docker-compose yml file](https://github.com/AshokTippaluri/Docker_project/blob/main/docker-compose.yml)
 
-# What is docker?
+[Installing a docker in ubuntu](https://github.com/AshokTippaluri/Docker_project/blob/main/docker.sh)
+
+
+### What is docker?
+
 Docker is an open platform for developing, shipping, and running applications.
 
 • Docker enables to separate the applications from infrastructure so that software delivery is quick.
@@ -13,11 +17,10 @@ Docker is an open platform for developing, shipping, and running applications.
 
 • The isolation and security allow you to run many containers simultaneously on a given host.
 
-
 ![image](https://github.com/AshokTippaluri/Docker_project/assets/96752472/e0b67e6e-a9cf-4f19-adca-5dfe5ccda022)
 
 
-# Docker Architecture
+### Docker Architecture
 Docker uses a client-server architecture.
 
 • The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon can run on the same system, or you can
@@ -31,10 +34,10 @@ connect a Docker client to a remote Docker daemon.
 4) Docker Image
 5) Docker Container
 
-
 ![image](https://github.com/AshokTippaluri/Docker_project/assets/96752472/68d70b6d-a514-4e45-9a0a-d735d7fd2421)
 
-# Docker Image/Container and DockerFile
+
+### Docker Image/Container and DockerFile
 • A Docker image is a read-only, inert template with instructions for deploying containers. In Docker, everything revolves around images.
 
 • An image consists of a collection of files (or layers) that pack together all the necessities—such as dependencies, source code, and libraries—needed to set up a completely functional container environment.
@@ -43,7 +46,32 @@ connect a Docker client to a remote Docker daemon.
 
 ![image](https://github.com/AshokTippaluri/Docker_project/assets/96752472/a3e924bd-16a9-454c-a048-d71942c555d0)
 
-# RUN is an image-build step
+
+### Install docker in Ubuntu
+``` bash
+##Install in Amazon Ubuntu
+#!/bin/bash
+sudo apt update -y
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" -y
+
+sudo apt update -y
+
+apt-cache policy docker-ce -y
+
+sudo apt install docker-ce -y
+
+#sudo systemctl status docker
+
+sudo chmod 777 /var/run/docker.sock
+```
+
+
+### RUN is an image-build step
 • CMD is the command the container executes by default when you launch the built image
 
 • CMD: Sets default parameters that can be overridden from the Docker Command Line Interface (CLI) while running a Docker container.
@@ -54,7 +82,9 @@ connect a Docker client to a remote Docker daemon.
 
 • ADD command is used to copy files/directories into a Docker image.
 
-# Docker Main Commands
+
+### Docker Main Commands
+
 • docker pull ubuntu. (To pull images from hub/repo)
 
 • docker run –it –name c1 –d –p 82:80 ubuntu (To run an image as a container)
@@ -62,14 +92,15 @@ connect a Docker client to a remote Docker daemon.
 • docker exec –it c1 bash (To login into the container) 
 
 
-# Backup of the container as an Image
+### Backup of the container as an Image
+
 • docker commit c1 apache-on-ubuntu:1.0 (To save the container data as a new Image)
 
 • docker save apache-on-ubuntu:1.0 --output backup.tar (To save the image as tar)
 
 • docker load -i backup.tar (To unzip the image from tar)
 
-• docker start/stop/restart c1 (Conatiner commands)
+• docker start/stop/restart c1 (Container commands)
 
 • docker push image-name (To push the image to a container)
 
@@ -77,7 +108,9 @@ connect a Docker client to a remote Docker daemon.
 
 ![image](https://github.com/AshokTippaluri/Docker_project/assets/96752472/82b320f6-3780-4605-9e09-8c6d1ee14973)
 
-# Docker Container States
+
+### Docker Container States
+
 Created - Docker assigns the created state to the containers that were never started ever since they were created. Hence, no CPU or memory is used by the containers in this state. 
 
 • Running - When we start a container having created a state using the docker start command, it attains the running state. This state signifies that the processes are running in an isolated environment inside the container.
@@ -89,7 +122,8 @@ Created - Docker assigns the created state to the containers that were never sta
 
 ![image](https://github.com/AshokTippaluri/Docker_project/assets/96752472/780cb95d-8b83-4181-bc50-961029800f6c)
 
-# Docker Networking
+
+### Docker Networking
 1) Bridge: The default network driver. Bridge networks apply to containers running on the same Docker daemon host.
 2) Host: For standalone containers, remove network isolation between the container and the Docker host, and use the host’s networking directly
 3) Overlay: Overlay networks connect multiple Docker daemons together and enable swarm services to communicate with each other. You can also use overlay networks to facilitate communication between a swarm service and a standalone container, or between two standalone containers on different Docker daemons.
