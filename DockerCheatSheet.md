@@ -301,6 +301,6 @@ Compose is a tool that helps you to define and run multi-container Docker applic
 ● docker-compose stop-run docker-compose in detached mode using -d flag, and then you can stop it whenever needed.
 
 # Basic example
-https://github.com/AshokTippaluri/Docker_project/blob/main/docker-compose.yml
+[docker-compose.yml](https://github.com/AshokTippaluri/Docker_project/blob/main/docker-compose.yml)
 
 
