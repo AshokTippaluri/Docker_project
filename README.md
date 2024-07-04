@@ -6,6 +6,7 @@
 
 [Installing a docker in ubuntu](https://github.com/AshokTippaluri/Docker_project/blob/main/docker.sh)
 
+[Project 1A](https://github.com/AshokTippaluri/Docker_project/tree/main/dockerproject1) : Creating a Dockerfile and pushing it to the docker hub
 
 ### What is docker?
 
