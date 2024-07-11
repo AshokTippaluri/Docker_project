@@ -1,12 +1,20 @@
-### Building an docker file and pushing to docker hub
+### Building a docker file and pushing it to the docker hub
 
-Go to home directory install the docker and git 
+Go to the home directory install the docker and git 
 
+Clone the getting-started-app code from git
+   
     git clone https://github.com/docker/getting-started-app.git
 
+Go to the folder
+
     cd getting-started-app/
+
+create a Dockerfile 
     
     vim Dockerfile
+
+Add the below content to the Docker file
 
 ``` Dockerfile
 FROM node:18-alpine
@@ -16,39 +24,43 @@ RUN yarn install --production
 CMD ["node", "src/index.js"]
 EXPOSE 3000
 ```
+
+Build the image using the docker file and provide the name to the image
+ 
     docker build -t day02-todo .
-   
+
+To check the images
+
     docker images
-   
+
+Adding the tags to the image
+
     docker tag day02-todo:latest ashoktippaluri/cka:latest
-    
+
+A new image is created with the above tag
+
     docker image
+
+To push the image to the remote repository we need to log-in username and password
     
     docker login
+
+Push the image to the remote repository
     
     docker push ashoktippaluri/cka:latest
 
+Calling the image from the remote repository and running the image
+
     docker run -d -p 3000:3000 ashoktippaluri/cka:latest
 
-    docker exec -it 01a sh
+To the running containers
+
+    docker ps 
+
+To enter into the shell of 
+
+    docker exec -it <image_name> sh
     
-   73  docker images --help
-   74  docker images
-   75  docker image rm node
-   76  docker rmi node
-   77  docker rmi 73
-   78  docker ps
-   79  docker rmi 0492
-   80  docker pull ashoktippaluri/cka:latest
-   81  docker run -d -p 80:3000 ashoktippaluri/cka:latest
-   82  docker ps
-   83  docker stop 6a
-   84  docker ps
-   85  docker run -d -p 3000:80 ashoktippaluri/cka:latest
-   86  docker ps
-   87  ip a
-   88  docker stop 9a
-   89  
-   90  docker ps
-   91  docker exec -it 01a /bash
-   92  
+To remove the images from the environment 
+
+     docker rmi <image_name>  
