@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        // IMAGE_NAME = "ng_project"
-        // CONTAINER_NAME = "NG_nginx-container"
+        IMAGE_NAME = "WillYouMarryMe"
+        CONTAINER_NAME = "WillYouMarryMe"
         HTML_REPO = "https://github.com/AshokTippaluri/Docker_project.git"
-        WORK_DIR = "/tmp/workdir/Docker_project/WillYouMarryMe"
-        // HTML_SUBDIR = "order-summary-component-card"  // Set subdirectory name
+        WORK_DIR = "/tmp/workdir/"
+        HTML_SUBDIR = "WillYouMarryMe"  // Set subdirectory name
         // PORT = "8085"  // Change this if needed
     }
 
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                       docker build -t willyoumarryme .
+                       docker build -t ${IMAGE_NAME} .
                     """
                 }
             }
