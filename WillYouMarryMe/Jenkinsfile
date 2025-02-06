@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "willyoumarryme"
         CONTAINER_NAME = "willyoumarryme"
         HTML_REPO = "https://github.com/AshokTippaluri/Docker_project.git"
-        WORK_DIR = "/tmp/workdir/"
+        WORK_DIR = "/tmp/workdir/WillYouMarryMe"
         HTML_SUBDIR = "WillYouMarryMe"  // Set subdirectory name
         // PORT = "8085"  // Change this if needed
     }
