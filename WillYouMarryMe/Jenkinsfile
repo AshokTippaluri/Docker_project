@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "WillYouMarryMe"
-        CONTAINER_NAME = "WillYouMarryMe"
+        IMAGE_NAME = "willyoumarryme"
+        CONTAINER_NAME = "willyoumarryme"
         HTML_REPO = "https://github.com/AshokTippaluri/Docker_project.git"
         WORK_DIR = "/tmp/workdir/"
         HTML_SUBDIR = "WillYouMarryMe"  // Set subdirectory name
