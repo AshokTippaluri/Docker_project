@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: willyoumarryme
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: willyoumarryme
+  template:
+    metadata:
+      labels:
+        app: willyoumarryme
+    spec:
+      containers:
+        - name: willyoumarryme
+          image: ashoktippaluri/cka:willyoumarryme
+          ports:
+            - containerPort: 80
+
