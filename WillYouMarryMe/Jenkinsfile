@@ -5,7 +5,7 @@ pipeline {
         // IMAGE_NAME = "ng_project"
         // CONTAINER_NAME = "NG_nginx-container"
         HTML_REPO = "https://github.com/AshokTippaluri/Docker_project.git"
-        WORK_DIR = "/tmp/workdir//Docker_project/WillYouMarryMe"
+        WORK_DIR = "/tmp/workdir/Docker_project/WillYouMarryMe"
         // HTML_SUBDIR = "order-summary-component-card"  // Set subdirectory name
         // PORT = "8085"  // Change this if needed
     }
