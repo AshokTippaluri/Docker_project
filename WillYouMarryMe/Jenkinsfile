@@ -40,16 +40,24 @@ pipeline {
                 }
             }
         }
-
-        stage('Run Nginx Container') {
+        stage('Build') {
             steps {
                 script {
                     sh """
-                        docker run -d --name ${CONTAINER_NAME} -p ${PORT}:80 \\
-                        -v ${WORK_DIR}/${HTML_SUBDIR}:/usr/share/nginx/html \\
-                        nginx:latest
+                       docker build -t willyoumarryme .
                     """
                 }
+            }
+        }
+        // stage('Run') {
+        //     steps {
+        //         script {
+        //             sh """
+        //                 docker run -d --name ${CONTAINER_NAME} -p ${PORT}:80 \\
+        //                 -v ${WORK_DIR}/${HTML_SUBDIR}:/usr/share/nginx/html \\
+        //                 nginx:latest
+        //             """
+        //         }
             }
         }
     }
