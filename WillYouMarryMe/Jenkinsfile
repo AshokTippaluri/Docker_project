@@ -58,8 +58,8 @@ pipeline {
         //                 nginx:latest
         //             """
         //         }
-            }
-        }
+               // }
+          // }
     }
 
     post {
